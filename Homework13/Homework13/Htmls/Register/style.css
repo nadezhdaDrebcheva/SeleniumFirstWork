@@ -1,0 +1,42 @@
+.blue-button {
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: serif;
+    padding: 7px;
+}
+
+.red-button {
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: serif;
+    padding: 7px;
+}
+
+.disabled-button {
+    opacity: 0.3;
+}
+
+.enabled-button {
+    cursor: pointer;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: cornflowerblue;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+#btnArea:hover .tooltiptext {
+    visibility: visible;
+}
