@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+</head>
+<body>
+    <form id="register">
+        <h2 id="mainHeading" ondblclick="showInfo()">Register an employee:</h2>
+        <div id="contextMenu" class="context-menu" style="display:none;">
+            <ul class="menu">
+                <li>
+                    <button id="contextRegister" disabled class="disabled-button" style="border:none; background-color:white;" onclick="submitData()">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp Register
+                    </button>
+                </li>
+                <li>
+                    <button id="contextClear" disabled class="disabled-button" style="border:none; background-color:white;" onclick="clearData()">
+                        <i class="fa fa-trash " aria-hidden="true"></i>&nbsp Clear
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <p>Please enter your name:</p>
+
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" onchange="manageRegisterButton()" /><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" onchange="manageRegisterButton()" /><br>
+
+        <p>Please select your gender:</p>
+
+        <input type="radio" id="male" name="gender" value="Male" checked="checked">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+
+        <p>Please select your favourite technologies:</p>
+
+        <input type="checkbox" id="java" name="checkBox" value="Java" />
+        <label for="java">Java</label>
+        <input type="checkbox" id="cs" name="checkBox" value="C#" />
+        <label for="cs">C#</label>
+        <input type="checkbox" id="html" name="checkBox" value="HTML" />
+        <label for="html">HTML</label>
+        <input type="checkbox" id="css" name="checkBox" value="CSS" />
+        <label for="css">CSS</label>
+        <input type="checkbox" id="js" name="checkBox" value="JavaScript" />
+        <label for="js">JavaScript</label>
+
+        <div style="border-block:dashed;">
+            <p>Please select your job title:</p>
+
+            <select id="job">
+                <option>QA</option>
+                <option>Automation QA</option>
+                <option>Developer</option>
+                <option>Designer</option>
+            </select>
+            <br><br>
+        </div>
+        <span class="tooltiptext">Enter First name and Last name to enable Register button.</span>
+        <br><br>
+        <button disabled id="submit" class="blue-button disabled-button" onclick="submitData()">
+            <span id="btnArea" onmouseover="showTooltip()" onmouseout="hideTooltip()">Register</span>
+        </button>
+
+        <button disabled id="clear" class="red-button disabled-button" onclick="clearData()">Clear</button>
+    </form>
+
+</body>
+</html>

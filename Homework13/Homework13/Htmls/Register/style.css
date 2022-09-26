@@ -1,0 +1,87 @@
+.blue-button {
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: serif;
+    padding: 7px;
+}
+
+.red-button {
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: serif;
+    padding: 7px;
+}
+
+.disabled-button {
+    opacity: 0.3;
+}
+
+.enabled-button {
+    cursor: pointer;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: cornflowerblue;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+#btnArea:hover .tooltiptext {
+    visibility: visible;
+}
+
+.context-menu {
+}
+
+ul {
+    list-style: none;
+}
+
+.context-menu {
+    position: absolute;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
+    padding: 10px 0;
+}
+
+.menu > li {
+    font: inherit;
+    border: 0;
+    padding: 10px 30px 10px 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: unset;
+    color: #000;
+    font-weight: 500;
+    transition: 0.5s linear;
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    cursor:default;
+}
+
+.menu > li#remove:hover {
+    color: darkred;
+}
+.menu > li#edit:hover {
+    color: darkgreen;
+}
