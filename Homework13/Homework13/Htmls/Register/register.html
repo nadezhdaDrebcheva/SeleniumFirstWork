@@ -5,12 +5,26 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title></title>
 </head>
 <body>
     <form id="register">
-        <h2>Register an employee:</h2>
-
+        <h2 id="mainHeading" ondblclick="showInfo()">Register an employee:</h2>
+        <div id="contextMenu" class="context-menu" style="display:none;">
+            <ul class="menu">
+                <li>
+                    <button id="contextRegister" disabled class="disabled-button" style="border:none; background-color:white;" onclick="submitData()">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp Register
+                    </button>
+                </li>
+                <li>
+                    <button id="contextClear" disabled class="disabled-button" style="border:none; background-color:white;" onclick="clearData()">
+                        <i class="fa fa-trash " aria-hidden="true"></i>&nbsp Clear
+                    </button>
+                </li>
+            </ul>
+        </div>
         <p>Please enter your name:</p>
 
         <label for="fname">First name:</label><br>

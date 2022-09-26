@@ -75,26 +75,33 @@ function setTooltipText(text) {
 
 function manageRegisterButton() {
     var registerButton = document.getElementById('submit');
+    var contextMenuRegisterButton = document.getElementById('contextRegister');
     var clearButton = document.getElementById('clear');
+    var contextMenuClearButton = document.getElementById('contextClear');
 
     var firstName = document.getElementById('fname').value;
     var lastName = document.getElementById('lname').value;
 
     if (firstName == '' || lastName == '') {
         disableButton(registerButton);
+        disableButton(contextMenuRegisterButton);
         setTooltipText('Enter First name and Last name to enable Register button.');
 
         if (firstName != '' || lastName != '') {
             enableButton(clearButton);
+            enableButton(contextMenuClearButton);
         }
         else {
             disableButton(clearButton);
+            disableButton(contextMenuClearButton);
         }
     }
     else {
         enableButton(registerButton);
+        enableButton(contextMenuRegisterButton);
         setTooltipText('Click Register button to submit data.');
         enableButton(clearButton);
+        enableButton(contextMenuClearButton);
     }
 }
 
@@ -112,3 +119,31 @@ function hideTooltip() {
 function clearData() {
     window.location.reload();
 }
+
+function showInfo() {
+    alert('That is a register form. Provide user details to register a new employee.')
+}
+
+document.onclick = hideMenu;
+document.oncontextmenu = rightClick; 
+
+
+function hideMenu() {
+    var menu = document.getElementById("contextMenu");
+    if (menu != null) {
+        menu.style.display = "none";
+    }
+}
+
+function rightClick(e) {
+    e.preventDefault();
+
+    if (document.getElementById("contextMenu").style.display == 'block') {
+        hideMenu();
+    } else {
+        var menu = document.getElementById("contextMenu")
+        menu.style.display = 'block';
+        menu.style.left = e.pageX + "px";
+        menu.style.top = e.pageY + "px";
+    }
+} 

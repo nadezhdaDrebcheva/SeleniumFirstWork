@@ -13,7 +13,7 @@ namespace Homework13
     {
         protected abstract string Url { get; }
 
-        protected IWebDriver Driver { get; set; }
+        protected static IWebDriver Driver { get; set; }
 
         [SetUp]
         public void Setup()
@@ -90,7 +90,7 @@ namespace Homework13
         }
         public void ClickRegisterButton()
         {
-            IWebElement registerButton = Driver.FindElement(By.CssSelector("button[onclick='submitData()']"));
+            IWebElement registerButton = Driver.FindElement(By.Id("submit"));
             registerButton.Click();
         }
 
@@ -111,5 +111,7 @@ namespace Homework13
             Driver.SwitchTo().Alert().Accept();
         }
 
-    }
+       
+
+}
 }
